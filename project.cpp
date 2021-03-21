@@ -60,6 +60,9 @@ int main()
             break;
         case 4:
             exit(0);
+        default:
+            cout<<"Please Enter right number..Thank you\n";
+            break;
 
         }
         cout<<"\nYou want more sort result y/n?";
