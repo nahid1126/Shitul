@@ -19,11 +19,65 @@ void insertionSort(int arr[], int n)
         cout << arr[i] << " ";
     cout << endl;
 }
-
-void mergeSort(int arr[], int n)
+void Merge(int arr[], int l, int h, int m)
 {
 
+    int i, j, k, temp[h-l+1];
+    i = l;
+    k = 0;
+    j = m + 1;
+
+    while (i <= m && j <= h)
+    {
+        if (arr[i] < arr[j])
+        {
+            temp[k] = arr[i];
+            k++;
+            i++;
+        }
+        else
+        {
+            temp[k] = arr[j];
+            k++;
+            j++;
+        }
+    }
+
+    while (i <= m)
+    {
+        temp[k] = arr[i];
+        k++;
+        i++;
+    }
+
+    while (j <= h)
+    {
+        temp[k] = arr[j];
+        k++;
+        j++;
+    }
+
+
+    for (i = l; i <= h; i++)
+    {
+        arr[i] = temp[i-l];
+    }
 }
+void mergeSort(int arr[], int l, int h)
+{
+    int m;
+    if (l < h)
+    {
+        m=(l+h)/2;
+
+        mergeSort(arr, l, m);
+        mergeSort(arr, m+1, h);
+
+
+        Merge(arr, l, h, m);
+    }
+}
+
 
 void quickSort(int arr[], int n)
 {
@@ -53,7 +107,14 @@ int main()
             insertionSort(arr, n);
             break;
         case 2:
-            mergeSort(arr,n);
+            mergeSort(arr,0,n-1);
+            cout<<"\nSorted Data ";
+            cout<<"\n\nAccording to Merger Sort, sorted data is: ";
+            for (int i = 0; i < n; i++)
+            {
+                cout << arr[i] << " ";
+            }
+            cout << endl;;
             break;
         case 3:
             quickSort(arr,n);
