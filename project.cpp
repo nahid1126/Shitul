@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+///For Insertion sort
 void insertionSort(int arr[], int n)
 {
     int i, key, j;
@@ -14,11 +16,13 @@ void insertionSort(int arr[], int n)
         }
         arr[j + 1] = key;
     }
-    cout<<"\n\nAccording to Insertion Sort, sorted data is: ";
+    cout<<"\n\nAccording to Insertion Sort, sorted data are: ";
     for (i = 0; i < n; i++)
         cout << arr[i] << " ";
     cout << endl;
 }
+
+///For Merge sort
 void Merge(int arr[], int l, int h, int m)
 {
 
@@ -79,9 +83,39 @@ void mergeSort(int arr[], int l, int h)
 }
 
 
-void quickSort(int arr[], int n)
+///For Quick sort
+int partition(int arr[],int left,int right)
 {
+    int pivot=arr[right];
 
+    int P_index=left;
+    int i,tamp;
+    for(i=left; i<right; i++)
+    {
+        if(arr[i]<=pivot)
+        {
+            tamp=arr[i];
+            arr[i]=arr[P_index];
+            arr[P_index]=tamp;
+            P_index++;
+        }
+    }
+
+    tamp=arr[right];
+    arr[right]=arr[P_index];
+    arr[P_index]=tamp;
+
+
+    return P_index;
+}
+void quickSort(int arr[],int left,int right)
+{
+    if(left<right)
+    {
+        int P_index=partition(arr,left,right);
+        quickSort(arr,left,P_index-1);
+        quickSort(arr,P_index+1,right);
+    }
 }
 
 int main()
@@ -99,7 +133,7 @@ int main()
     }
     do
     {
-        cout<<"\nPress 1: Insertion Sort\nPress2: Merge Sort \nPress3: Quick Sort \nPress4: Exit\nChose Your Option==> ";
+        cout<<"\nPress 1: Insertion Sort\nPress2: Merge Sort \nPress3: Quick Sort \nPress4: Exit\n\nChose Your Option==> ";
         cin>>option;
         switch(option)
         {
@@ -108,16 +142,21 @@ int main()
             break;
         case 2:
             mergeSort(arr,0,n-1);
-            cout<<"\nSorted Data ";
-            cout<<"\n\nAccording to Merger Sort, sorted data is: ";
+            cout<<"\n\nAccording to Merger Sort, sorted data are: ";
             for (int i = 0; i < n; i++)
             {
                 cout << arr[i] << " ";
             }
-            cout << endl;;
+            cout << endl;
             break;
         case 3:
-            quickSort(arr,n);
+            quickSort(arr,0,n-1);
+            cout<<"\n\nAccording to Quick Sort, sorted data are:";
+            for(int i=0; i<n; i++)
+            {
+                cout<<arr[i]<<" ";
+            }
+            cout << endl;
             break;
         case 4:
             exit(0);
