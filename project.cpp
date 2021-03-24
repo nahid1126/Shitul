@@ -86,35 +86,41 @@ void mergeSort(int arr[], int l, int h)
 ///For Quick sort
 int partition(int arr[],int left,int right)
 {
-    int pivot=arr[right];
-
-    int P_index=left;
-    int i,tamp;
-    for(i=left; i<right; i++)
+    int i,j,tamp;
+    int pivot=arr[left];
+    i=left;
+    j=right;
+    while(i<j)
     {
-        if(arr[i]<=pivot)
+        while(arr[i]<=pivot&& i<right)
+        {
+            i=i+1;
+        }
+        while(arr[j]>pivot)
+        {
+            j=j-1;
+        }
+        if(i<j)
         {
             tamp=arr[i];
-            arr[i]=arr[P_index];
-            arr[P_index]=tamp;
-            P_index++;
+            arr[i]=arr[j];
+            arr[j]=tamp;
+
         }
+        tamp=arr[left];
+        arr[left]=arr[j];
+        arr[j]=tamp;
+
     }
-
-    tamp=arr[right];
-    arr[right]=arr[P_index];
-    arr[P_index]=tamp;
-
-
-    return P_index;
+    return j;
 }
 void quickSort(int arr[],int left,int right)
 {
     if(left<right)
     {
-        int P_index=partition(arr,left,right);
-        quickSort(arr,left,P_index-1);
-        quickSort(arr,P_index+1,right);
+        int q=partition(arr,left,right);
+        quickSort(arr,left,q-1);
+        quickSort(arr,q+1,right);
     }
 }
 
