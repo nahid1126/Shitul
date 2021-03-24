@@ -4,17 +4,17 @@ using namespace std;
 ///For Insertion sort
 void insertionSort(int arr[], int n)
 {
-    int i, key, j;
-    for (i = 1; i < n; i++)
+    int i,p,key,t;
+    for (p=1; p<n; p++)
     {
-        key = arr[i];
-        j = i - 1;
-        while (j >= 0 && arr[j] > key)
+        t=arr[p];
+        key=p-1;
+        while(arr[key]>t&&key>-1)
         {
-            arr[j + 1] = arr[j];
-            j = j - 1;
+            arr[key+1]=arr[key];
+            key--;
         }
-        arr[j + 1] = key;
+        arr[key+1]=t;
     }
     cout<<"\n\nAccording to Insertion Sort, sorted data are: ";
     for (i = 0; i < n; i++)
