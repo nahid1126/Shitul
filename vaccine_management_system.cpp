@@ -17,8 +17,7 @@ class vaccine
     string profession;
     string address;
     string mobile_number;
-    string vac_date;
-    int cnt;
+    int dt,mo,ye;
 public:
     void search_data();
     void add_new();
@@ -42,8 +41,9 @@ void show()
     cout<<setw(15)<<"Temperature";
     cout<<setw(7)<<"gender";
     cout<<setw(15)<<"Mobile No.";
-    cout<<"Address"<<endl;
-    //cout<<setw(12)<<"Next Doge";
+    cout<<setw(10)<<"Address";
+    cout<<setw(12)<<"Fast Doge";
+    cout<<setw(12)<<"Next Doge"<<endl;
 }
 void vaccine ::view_vaccine()
 {
@@ -59,7 +59,7 @@ void vaccine ::view_vaccine()
     int ch;
     int s=num_of_vaccine-i;
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\tVACCINE STATISTICS";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -104,13 +104,15 @@ void vaccine::show_list()
     cout<<setw(15)<<temperature;
     cout<<setw(7)<<gender;
     cout<<setw(15)<<mobile_number;
-    cout<<address<<endl;
+    cout<<setw(10)<<address;
+    cout<<dt<<'/'<<mo<<'/'<<ye;
+    cout<<"\t"<<dt<<'/'<<mo+1<<'/'<<ye<<endl;
 }
 void vaccine::search_data()
 {
     vaccine item;
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\tSEARCHING STATISTICS";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -160,7 +162,7 @@ void vaccine::search_by_NID()
     int flag =0;
     string nid_num;
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\t NID NUMBER SEARCHING ";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -190,7 +192,7 @@ void vaccine::search_by_age()
     int flag =0;
     int a,p=0;
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\t AGE SEARCHING ";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -223,7 +225,7 @@ void vaccine::search_by_profession()
     int p=0;
     string prof;
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\t PROFESSION SEARCHING ";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -256,7 +258,7 @@ void vaccine::search_by_gender()
     char g;
     int p=0;
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\t GENDER SEARCHING ";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -288,7 +290,7 @@ void vaccine::search_by_blood_pressure()
     int flag =0;
     int b,p=0;
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\t Blood Pressure SEARCHING ";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -318,7 +320,7 @@ void vaccine::search_by_blood_pressure()
 void vaccine::setdata()
 {
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\t NID NUMBER SEARCHING ";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -344,12 +346,12 @@ void vaccine::setdata()
     cout<<"\n\t\t Enter your Mobile number :- ";
     getline(cin,mobile_number);
     cout<<"\n\t\t Enter Vaccine Taken Date :- ";
-    getline(cin,vac_date);
+    cin>>dt>>mo>>ye;
 }
 void vaccine::showdata()
 {
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\t DETAILS  ";
     cout<<"\n\t\t\t*****************************************\n\n";
@@ -362,6 +364,8 @@ void vaccine::showdata()
     cout<<"\t\t Body temperature is : "<<temperature<<endl;
     cout<<"\t\t Address is "<<address<<endl;
     cout<<"\t\t Mobile number is: "<<mobile_number<<endl;
+    cout<<"\t\t Fast Doge Taken: "<<dt<<'/'<<mo<<'/'<<ye<<endl;
+    cout<<"\t\t Next Doge Date: "<<dt<<'/'<<mo+1<<'/'<<ye<<endl;
 }
 void vaccine::add_new()
 {
@@ -378,7 +382,7 @@ void menu()
 {
     system("cls");
     cout<<"\n\n\t\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t\tPowered By:- Your Team ERROR "<<endl<<endl;
+    cout<<"\t\t\t\tPowered By:- Team ERROR "<<endl<<endl;
     cout<<"\n\t\t\t*****************************************\n";
     cout<<"\t\t\t\t\tMENU";
     cout<<"\n\t\t\t*****************************************\n";
@@ -391,7 +395,7 @@ int main()
     int k=3;
     int num_vac;
     cout<<"\n\n\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-    cout<<"\t\t\t Powered By:- Your Team ERROR "<<endl;
+    cout<<"\t\t\t Powered By:- Team ERROR "<<endl;
     cout<<"\t\n\n Press any key to continue.............  "<<endl;
     getch();
 B:
@@ -424,7 +428,7 @@ B:
     do
     {
         cout<<"\n\n\t\t\xB3\xB2=\xB2=\xB2-\xB3 VACCINE MANAGEMENT SYSTEM  \xB3\xB2=\xB2=\xB2-\xB3\n\n"<<endl;
-        cout<<"\t\t\t\t\t\t Powered By:- Your Team ERROR "<<endl;
+        cout<<"\t\t\t\t\t\t Powered By:- Team ERROR "<<endl;
         menu();
         cout<<"\n\t\n\tChoose according to your need : ";
         cin>>ch;
